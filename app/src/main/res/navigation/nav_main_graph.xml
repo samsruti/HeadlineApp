@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_host_main_fragment"
+    app:startDestination="@id/headlinesFragment">
+    <fragment
+        android:id="@+id/headlinesFragment"
+        android:name="com.samsruti.headlineapp.ui.headlines.HeadlinesFragment"
+        android:label="Headlines" >
+<!--        TODO: Can create new anim files and include here-->
+        <action
+            android:id="@+id/action_headlinesFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.samsruti.headlineapp.ui.details.DetailsFragment"
+        android:label="" >
+        <argument
+            android:name="headline_details"
+            app:argType="com.samsruti.headlineapp.domain.Headline" />
+    </fragment>
+</navigation>
